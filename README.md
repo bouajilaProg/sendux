@@ -1,7 +1,26 @@
-# Tauri + React + Typescript
+# 📡 Sendux
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+**Sendux** is a lightweight, encrypted file sharing tool that lets you send files between devices on the same local network — fast, private, and cloud-free.
 
-## Recommended IDE Setup
+> ⚠️ Currently supported on **Linux only** via `.AppImage`. Windows support is coming soon.
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+---
+
+## ✨ Features
+
+- 🔐 Encrypted peer-to-peer transfers
+- 🌐 Local network only – no internet required
+- 📁 Share any file between Linux devices
+- 🖥️ Desktop app (AppImage format)
+- ⚡ Simple and fast UI
+
+---
+
+## 🐧 Installation (Linux Only)
+
+1. Go to the [Releases](https://github.com/your-username/sendux/releases) page.
+2. Download the latest `Sendux-x.x.x.AppImage`.
+3. Make it executable:
+
+```bash
+chmod +x Sendux-x.x.x.AppImage
