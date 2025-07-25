@@ -81,20 +81,7 @@ function ToSendList({ users, sharing, setSharing }: ToSendListProps) {
               Looking for other devices on your network. Make sure they have sharing enabled.
             </p>
 
-            {/* Animated dots */}
-            <div className="flex justify-center gap-1 mb-6">
-              <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
-              <div className="w-2 h-2 bg-primary rounded-full animate-bounce animation-delay-200"></div>
-              <div className="w-2 h-2 bg-primary rounded-full animate-bounce animation-delay-400"></div>
-            </div>
           </div>
-
-          <button
-            onClick={() => window.location.reload()}
-            className="btn btn-outline btn-sm"
-          >
-            Refresh Search
-          </button>
         </div>
       )}
 

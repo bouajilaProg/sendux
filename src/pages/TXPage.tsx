@@ -16,7 +16,6 @@ function TXPage() {
 
   // Simulate fetching users (in a real app, this would be an API call)
   function fetchUsers(): User[] {
-    return []
     return [
       { id: 1, name: 'Alice', avatarUrl: 'https://example.com/avatar1.png' },
       { id: 2, name: 'Bob', avatarUrl: 'https://example.com/avatar2.png' },
