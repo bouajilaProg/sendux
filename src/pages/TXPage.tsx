@@ -32,12 +32,12 @@ function TXPage() {
   }, []);
 
 
-
+  {/* if found drag and drop solution
   if (files.length === 0) {
     return (
       <FilePicker files={files} setFiles={setFiles} />
     );
-  }
+  }*/}
 
   return (
     <div className="h-screen bg-base-200 p-8 flex flex-col gap-8">
