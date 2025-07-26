@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import UserCard from '../components/TX/UserCard';
-import FileSendList from '../components/RX/FileSendList';
+import FileSendList from '../components/TX/FileSendList';
 import FilePicker from '../components/RX/FilePicker';
-import ToSendList from '../components/RX/ToSendList';
+import ToSendList from '../components/TX/ToSendList';
 import { User } from '../lib/types';
 
 
