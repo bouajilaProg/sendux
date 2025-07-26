@@ -3,9 +3,9 @@ import clsx from 'clsx';
 
 type FileItemProps = {
   sender: string;
-  size: string;
+  size: number; // taille en Mo
   onAccept?: () => void;
-  onReject?: () => void; // You can remove this from props if unused
+  onReject?: () => void; // Peut être retiré si inutilisé
   onComplete?: () => void;
 };
 
@@ -13,8 +13,6 @@ const FileItem = ({ sender, size, onAccept, onReject, onComplete }: FileItemProp
   const [state, setState] = useState<'default' | 'transferring' | 'done'>('default');
   const [progress, setProgress] = useState(0);
   const [hidden, setHidden] = useState(false);
-
-  const sizeMb = parseFloat(size);
 
   useEffect(() => {
     if (state !== 'transferring') return;
@@ -95,7 +93,7 @@ const FileItem = ({ sender, size, onAccept, onReject, onComplete }: FileItemProp
           {state === 'transferring' ? (
             <div className="text-center">
               <p className="text-sm text-base-content/70 mb-1">
-                {Math.max(0, (sizeMb * (1 - progress / 100))).toFixed(1)} MB remaining
+                {Math.max(0, (size * (1 - progress / 100))).toFixed(1)} MB remaining
               </p>
               <div className="text-xs text-primary font-medium">
                 {progress.toFixed(0)}% complete
@@ -104,11 +102,11 @@ const FileItem = ({ sender, size, onAccept, onReject, onComplete }: FileItemProp
           ) : state === 'done' ? (
             <div className="text-center">
               <p className="text-sm font-medium text-success">Transfer complete!</p>
-              <p className="text-xs text-base-content/60">{size} downloaded</p>
+              <p className="text-xs text-base-content/60">{size.toFixed(1)} MB downloaded</p>
             </div>
           ) : (
             <div className="text-center">
-              <p className="text-sm text-base-content/80">{size} file</p>
+              <p className="text-sm text-base-content/80">{size.toFixed(1)} MB</p>
               <p className="text-xs text-base-content/60">from {sender}</p>
             </div>
           )}

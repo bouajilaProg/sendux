@@ -1,14 +1,35 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import FileItem from '../components/RX/FileItem';
+import { PackageSent } from '../lib/types';
 
 function RXPage() {
   const [receiving, setReceiving] = useState(true);
+  const [packages, setPackages] = useState<PackageSent[]>([])
 
-  const items = [
-    { id: 1, sender: 'Ahmed', size: '2.3 MB' },
-    { id: 2, sender: 'Sara', size: '1.2 MB' },
-    { id: 3, sender: 'Youssef', size: '45 MB' },
-  ];
+  function GetPackageSent() {
+    setPackages([
+      {
+        id: '1',
+        sender: 'Alice',
+        size: 5,
+        sentSize: 0,
+        status: 'default',
+      },
+      {
+        id: '2',
+        sender: 'Bob',
+        size: 10,
+        sentSize: 0,
+        status: 'default',
+      },
+    ]);
+  }
+
+  useEffect(() => {
+    GetPackageSent()
+  }, [])
+
+
 
   return (
     <div className=" bg-base-200 flex items-center h-screen justify-center p-8">
@@ -33,15 +54,15 @@ function RXPage() {
 
         {/* File List */}
         <div className="flex flex-wrap gap-3 ">
-          {items.length > 0 ? (
-            items.concat(items).map((item) => (
+          {packages.length > 0 ? (
+            packages.map((packageItem) => (
               <FileItem
-                key={item.id}
-                sender={item.sender}
-                size={item.size}
-                onAccept={() => console.log(`Accepted from ${item.sender}`)}
-                onReject={() => console.log(`Rejected from ${item.sender}`)}
-                onComplete={() => console.log(`Completed transfer from ${item.sender}`)}
+                key={packageItem.id}
+                sender={packageItem.sender}
+                size={packageItem.size}
+                onAccept={() => console.log(`Accepted from ${packageItem.sender}`)}
+                onReject={() => console.log(`Rejected from ${packageItem.sender}`)}
+                onComplete={() => console.log(`Completed transfer from ${packageItem.sender}`)}
               />
             ))
           ) : (
