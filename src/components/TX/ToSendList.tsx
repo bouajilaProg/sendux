@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import UserCard from '../TX/UserCard';
 import { User } from '../../lib/types';
 

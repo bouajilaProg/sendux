@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { FiX, FiFile } from 'react-icons/fi';
 import { formatSize } from '../../lib/utils';
 
